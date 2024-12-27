@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using RazorPagesMovie.Modeles;
+using RazorPagesMovie.Models;
+
+namespace RazorPagesMovie.Data
+{
+    public class RazorPagesMovieContext : DbContext
+    {
+        public RazorPagesMovieContext (DbContextOptions<RazorPagesMovieContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<RazorPagesMovie.Modeles.Movie> Movie { get; set; } = default!;
+        public DbSet<RazorPagesMovie.Models.Todos> Todos { get; set; } = default!;
+    }
+}
